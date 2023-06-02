@@ -5,7 +5,6 @@ import Signup from "./Components/Signup/Signup.jsx"
 import Home from "./Components/Home/Home.jsx"
 import GenerateMail from './Components/GenerateMail/GenerateMail.jsx';
 import GenerateResume from './Components/GenerateResume/GenerateResume.jsx';
-import GeneratePdf from './Components/GenerateResume/GeneratePdf.jsx';
 
 
 const App = () => {
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/signup" element={<Signup />}/>
         <Route path='/generatemail' element={ <GenerateMail/> }></Route>
         <Route path='/generatResume' element={ <GenerateResume/> }></Route>
-        <Route path='/generatePdf' element={<GeneratePdf/>} ></Route>
         
       </Routes>
   </BrowserRouter>
