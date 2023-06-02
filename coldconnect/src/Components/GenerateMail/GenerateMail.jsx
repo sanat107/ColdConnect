@@ -49,11 +49,11 @@ const GenerateMail = () => {
   };
 
   const handleGoBack = () => {
-    navigate('/');
+    navigate('/resumeselect');
   };
 
   return (
-    <>
+    <> 
       <Navbar />
       <button onClick={handleGoBack}>Go Back</button>
       <div className='maincontainer'>
