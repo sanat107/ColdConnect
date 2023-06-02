@@ -1,10 +1,12 @@
 import React from 'react'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "./Components/Login/Login.jsx"
 import Signup from "./Components/Signup/Signup.jsx"
 import Home from "./Components/Home/Home.jsx"
 import GenerateMail from './Components/GenerateMail/GenerateMail.jsx';
 import GenerateResume from './Components/GenerateResume/GenerateResume.jsx';
+
 
 const App = () => {
   return (
@@ -19,8 +21,7 @@ const App = () => {
         
       </Routes>
   </BrowserRouter>
-      
-      
+
     </div>
   )
 }
