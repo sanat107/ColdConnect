@@ -10,7 +10,7 @@ const Home = () => {
     <button>  <Link to="/resumeselect" >Get started</Link> </button>
     <button><Link to="/generatResume" >Resume section</Link></button>
     </>
-  )
+  ) 
 }
 
-export default Home
+export default Home 

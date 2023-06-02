@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     background-color:  #F5F5F5;
     padding: 10px;
@@ -16,22 +16,26 @@
   .navbar-links {
     list-style-type: none;
     display: flex;
-    gap: 15px;
+    gap: 5rem;
     margin-right: 60px;
+    font-size: 1.5rem;
   }
   
   .navbar-links li{
     margin-left: 20px;
-  }
-  .navbar-links li a {
     text-decoration: none;
     color: #000;
     margin-left: 25px;
   }
-  
+
+  .navbar-links li:hover {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+  }
+
   .navbar-buttons{
     margin-right: 100px;
-
   }
   .navbar-buttons button {
     color: black;
@@ -39,6 +43,7 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 30px;
+    font-size: 1.3rem;
   }
   
   .navbar-buttons button:first-child {
@@ -55,7 +60,7 @@
     border: none;
   }
   .btn-signup:hover {
-    background-color: #656EDF;
+    background-color: #656EDF; 
     color: white;
     border-color: #90cdf4;
   }
