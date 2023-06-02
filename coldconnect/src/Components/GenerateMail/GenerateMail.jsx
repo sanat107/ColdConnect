@@ -2,8 +2,10 @@ import Navbar from '../Navbar/Navbar'
 import './GenerateMAil.css';
 import React, { useState, useRef } from 'react';
 import GenerateMailCards from './GenerateMailCards';
+import { useNavigate } from 'react-router-dom';
 
 const GenerateMail = () => {
+  const navigate = useNavigate();
   const [previewSource, setPreviewSource] = useState('');
   const [apiData, setApiData] = useState(''); // State to store API data
   const fileInputRef = useRef(null);
@@ -46,9 +48,14 @@ const GenerateMail = () => {
     }
   };
 
+  const handleGoBack = () => {
+    navigate('/');
+  };
+
   return (
     <>
       <Navbar />
+      <button onClick={handleGoBack}>Go Back</button>
       <div className='maincontainer'>
         <div className='input-1'>
           <span>

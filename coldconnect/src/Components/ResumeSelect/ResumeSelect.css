@@ -6,8 +6,21 @@
     left: 0;
     top: 309px;
     border: 15px solid #5463E1;
+    cursor: pointer;
   }
-  
+
+  .first > div{
+    text-align: center;
+    position: relative;
+    top: 6rem;
+  }
+
+  .second>div{
+    text-align: center;
+    position: relative;
+    top: 6rem;
+  }
+   
   .second {
     box-sizing: border-box;
     position: absolute;
@@ -16,6 +29,7 @@
     left: 766px;
     top: 309px;
     border: 15px solid #B3BBF8;
+    cursor: pointer;
   }
   
   .main {
@@ -65,6 +79,19 @@ color: #FFFFFF;
     font-size: 40px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.pdf-1{
+  font-size: 3rem;
+  position: relative;
+  top: -2rem;
+  left: 18rem;
+}
+.pdf-2{
+  font-size: 3rem;
+  position: relative;
+  top: -2rem;
+  left: 18rem;
 }
 
 
