@@ -29,7 +29,7 @@
   }
 
   .navbar-links li:hover {
-    background-color: #eee;
+    text-decoration: underline;
     color: #000;
     cursor: pointer;
   }

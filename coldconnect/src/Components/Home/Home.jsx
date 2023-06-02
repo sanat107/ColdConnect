@@ -9,7 +9,7 @@ const Home = () => {
     <Navbar/>
     <button> <Link to="/generatemail" >Get started</Link> </button>
     </>
-  )
+  ) 
 }
 
 export default Home
