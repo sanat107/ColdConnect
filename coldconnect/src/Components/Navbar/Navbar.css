@@ -16,7 +16,7 @@
   .navbar-links {
     list-style-type: none;
     display: flex;
-    gap: 15px;
+    gap: 5rem;
     margin-right: 60px;
   }
   
