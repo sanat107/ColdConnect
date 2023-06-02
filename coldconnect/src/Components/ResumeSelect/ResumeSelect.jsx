@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './ResumeSelect.css'; 
-import { FaFilePdf,FaRegFilePdf } from "react-icons/fa"
+// import { FaFilePdf,FaRegFilePdf } from "react-icons/fa"
 
 const ResumeSelect = () => {
   const navigate = useNavigate();
@@ -27,9 +27,9 @@ const ResumeSelect = () => {
         <li href="" onClick={handleFirstClick}>
           <div className='first'>
             <div>
-              <span className='pdf-1' >
+              {/* <span className='pdf-1' >
               <FaFilePdf/>  
-              </span>
+              </span> */}
             <h2>I already have a resume</h2>
             <p>We'll re-format it and fill in your information so you don't have to.</p>
             </div>
@@ -39,10 +39,10 @@ const ResumeSelect = () => {
         <li onClick={handleSecondClick}> 
           <div className="second">
             <div>
-              <span className='pdf-2'>
+              {/* <span className='pdf-2'>
                 <FaRegFilePdf/>
 
-              </span>
+              </span> */}
             <h2>Create a new resume</h2>
             <p>We will help you create a resume step by step</p>
             </div>
