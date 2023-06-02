@@ -12,7 +12,7 @@ const GenerateMail = () => {
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const fileExtension = file.name.split('.').pop().toLowerCase();
+      const fileExtension = file.name.split('.').pop().toLowerCase();// Extension is singled out and made into lowercase.
       if (fileExtension === 'pdf' || fileExtension === 'doc' || fileExtension === 'docx') {
         previewFile(file);
       } else {
@@ -79,10 +79,6 @@ const GenerateMail = () => {
       <button className='generate' onClick={handleGenerateMail}>Generate Mail</button>
 
       <GenerateMailCards/>
-
-
-
-
     </>
   );
 };
