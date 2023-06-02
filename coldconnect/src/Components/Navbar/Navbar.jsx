@@ -12,7 +12,7 @@ const Navbar = () => {
   };
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Logo</div>
+      <div className="navbar-brand"> <img src="coldconnect logo.jpeg" alt="" />  </div>
       <ul className="navbar-links">
         <li>How It Works</li>
         <li>Our Team</li>
