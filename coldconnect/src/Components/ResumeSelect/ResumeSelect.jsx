@@ -36,7 +36,7 @@ const ResumeSelect = () => {
           </div>
         </li>
 
-        <li onClick={handleSecondClick}>
+        <li onClick={handleSecondClick}> 
           <div className="second">
             <div>
               <span className='pdf-2'>
