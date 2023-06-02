@@ -1,14 +1,13 @@
 import React from 'react';
 import Navbar from "../Navbar/Navbar.jsx"
 import { Link } from 'react-router-dom';
-import './Home.css';
+import "./Home.css"
 
-const Home = () => {
+const Home = () => { 
   return (
     <>
     <Navbar/>
-    <button>  <Link to="/resumeselect" >Get started</Link> </button>
-    <button><Link to="/generatResume" >Resume section</Link></button>
+    <button className='started' > <Link to="/resumeselect" >Get started</Link> </button>
     </>
   ) 
 }
