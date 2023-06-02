@@ -8,6 +8,7 @@ const Home = () => {
     <>
     <Navbar/>
     <buttonc>  <Link to="/generatemail" >Get started</Link> </buttonc>
+    <button><Link to="/generatResume" >Resume section</Link></button>
     </>
   )
 }
