@@ -1,4 +1,5 @@
 import React from 'react'
+import "./resume.css"
 
 const Stepfour = ({formData, setFormData}) => {
 
@@ -42,7 +43,7 @@ const Stepfour = ({formData, setFormData}) => {
   return (
     <div>
       <div className="skills-input">
-        <h4>Add Skills</h4>
+        <h4 className='addskills' >Add Skills</h4>
         {formData.skills.map((skill, index) => (
           <input
             key={index}

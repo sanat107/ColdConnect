@@ -8,7 +8,7 @@ const ResumeSelect = () => {
   const navigate = useNavigate();
 
   const handleFirstClick = () => {
-    navigate('/generatemail'); // Redirect to the generateMail route
+    navigate('/generatemail'); // Redirect to the generateMail route 
   };
 
   const handleSecondClick = () => {
@@ -39,10 +39,10 @@ const ResumeSelect = () => {
         <li onClick={handleSecondClick}> 
           <div className="second">
             <div>
-              <span className='pdf-2'>
+              <span className='pdf-2'> 
                 <FaRegFilePdf/>
 
-              </span>
+              </span> 
             <h2>Create a new resume</h2>
             <p>We will help you create a resume step by step</p>
             </div>

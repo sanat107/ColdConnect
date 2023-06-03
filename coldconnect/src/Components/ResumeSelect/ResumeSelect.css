@@ -6,13 +6,23 @@
     left: 0;
     top: 309px;
     border: 15px solid #5463E1;
-    cursor: pointer;
+    cursor: pointer; 
   }
 
   .first > div{
     text-align: center;
     position: relative; 
     top: 6rem;
+  }
+
+  .first p{
+    position: relative;
+    top: -4rem;
+  }
+
+  .first h2{
+    position: relative;
+    top: -1rem;
   }
 
   .second>div{
@@ -31,6 +41,16 @@
     border: 15px solid #B3BBF8;
     cursor: pointer;
   }
+
+  .second p{
+    position: relative;
+    top: -4rem;
+  }
+
+  .second h2{
+    position: relative;
+    top: -1rem;
+  }
   
   .main {
     position: relative;
@@ -44,7 +64,7 @@
     position: absolute;
     width: 297px;
     height: 89px;
-    left: 1141px;
+    left: 70rem;
     top: 654px;
     background: #5463E1;
     box-shadow: 0px 4px 4px #1D116A;
@@ -56,16 +76,17 @@ font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 40px;
-text-align: center;
+text-align: center; 
 color: #FFFFFF;
-}
+} 
 
 .prev{
     box-sizing: border-box;
     position: absolute;
     width: 297px;
     height: 89px;
-    left: 341px;
+    left: 20rem;
+    /* left: -30rem; */
     top: 654px;
     background: #5463E1;
     box-shadow: 0px 4px 4px #1D116A;

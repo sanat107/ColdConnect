@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home.jsx"
 import GenerateMail from './Components/GenerateMail/GenerateMail.jsx';
 import GenerateResume from './Components/GenerateResume/GenerateResume.jsx';
 import ResumeSelect from './Components/ResumeSelect/ResumeSelect.jsx';
+import Testing from './Components/Testing/Testing.jsx';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/generatemail' element={ <GenerateMail/> }></Route>
         <Route path='/generateResume' element={ <GenerateResume/> }></Route>
         <Route path='/resumeselect' element={ <ResumeSelect/> } />
+        <Route path="/Testing" element={ <Testing/> } />
         
       </Routes>
   </BrowserRouter>

@@ -1,32 +1,29 @@
 import Navbar from '../Navbar/Navbar'
-import './GenerateMAil.css';
 import React, { useState, useRef } from 'react';
 import GenerateMailCards from './GenerateMailCards';
 import { useNavigate } from 'react-router-dom';
 import { Document, Page, pdfjs } from 'react-pdf';
-// import "./GenerateMail.css";
-
+import './GenerateMAil.css';
+import axios from 'axios';
 const GenerateMail = () => {
   const navigate = useNavigate();
   const [previewSource, setPreviewSource] = useState('');
-  const [apiData, setApiData] = useState(''); // State to store API data
-  const [pdfText, setPdfText] = useState(''); // State to store PDF text
-  const [resumeText, setResumeText] = useState(''); // Temporary variable to store resume text
-  const fileInputRef = useRef(null);
-  const textareaRef = useRef(null); // Ref for the textarea
+  const [pdfText, setPdfText] = useState('');
+  const [mail, setMail] = useState('');
 
-  pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  const [manuallyEnteredData, setManuallyEnteredData] = useState('');
+  const fileInputRef = useRef(null); 
+  const textareaRef = useRef(null);
 
   const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
-      const fileExtension = file.name.split('.').pop().toLowerCase(); // Extension is singled out and made into lowercase.
+      const fileExtension = file.name.split('.').pop().toLowerCase();
       if (fileExtension === 'pdf') {
         const previewURL = URL.createObjectURL(file);
         setPreviewSource(previewURL);
         const text = await extractPdfText(file);
         setPdfText(text);
-        setResumeText(text); // Store resume text in the temporary variable
       } else {
         alert('Invalid file format. Only PDF documents are allowed.');
       }
@@ -34,22 +31,16 @@ const GenerateMail = () => {
   };
 
   const extractPdfText = async (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = function (event) {
-        const typedarray = new Uint8Array(event.target.result);
-        pdfjs.getDocument(typedarray).promise.then(function (pdf) {
-          pdf.getPage(1).then(function (page) {
-            page.getTextContent().then(function (textContent) {
-              const text = textContent.items.map((item) => item.str).join(' ');
-              resolve(text);
-            });
-          });
-        });
-      };
-      reader.onerror = reject;
-      reader.readAsArrayBuffer(file);
-    });
+    try {
+      const typedarray = new Uint8Array(await file.arrayBuffer());
+      const pdf = await pdfjs.getDocument(typedarray).promise;
+      const page = await pdf.getPage(1);
+      const content = await page.getTextContent();
+      const text = content.items.map((item) => item.str).join(' ');
+      return text;
+    } catch (error) {
+      return '';
+    }
   };
 
   const clearFileInput = () => {
@@ -57,15 +48,46 @@ const GenerateMail = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
+    setPdfText('');
   };
 
-  const handleGenerateMail = () => {
-    // Simulated API call
-    const apiResponse = 'This is the data from the API'; // Replace with actual API call
-    setApiData(apiResponse);
+  const handleGenerateMail = async () => {
+    const generatedMail = await generateMail();
+    setMail(generatedMail);
+    console.log(generateMail)
 
     if (textareaRef.current) {
-      textareaRef.current.value = apiResponse;
+      textareaRef.current.value = generatedMail;
+    }
+  };
+
+  const generateMail = async () => {
+    const API_KEY = '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';
+    const profile = 'Software_Engineer';
+    const prompt = `Write a cold mail for a job post of ${profile}.\n\nPDF Text:\n${pdfText}\n\nManually Entered Data:\n${manuallyEnteredData}`;
+
+    try {
+      const payload = {
+        prompt: prompt,
+        temperature: 0,
+        max_tokens:512,
+        model: 'text-davinci-003'
+      };
+
+      const response = await axios.post('https://api.openai.com/v1/completions', payload, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${API_KEY}`
+        }
+      });
+
+
+      const generatedMail = response.data.choices[0].text;
+      console.log(generatedMail);
+      return generatedMail;
+    } catch (error) {
+      // console.error('Error generating mail:', error);
+      return '';
     }
   };
 
@@ -73,10 +95,14 @@ const GenerateMail = () => {
     navigate('/resumeselect');
   };
 
+  const handleTextareaChange = (event) => {
+    setManuallyEnteredData(event.target.value);
+  };
+
   return (
     <>
     <Navbar/>
-      <button onClick={handleGoBack}>Go Back</button>
+      <button onClick={handleGoBack} className='backbtn' >Go Back</button>
       <div className="maincontainer">
         <div className="input-1">
           <span>
@@ -87,7 +113,7 @@ const GenerateMail = () => {
               ref={fileInputRef}
               id="file-input"
             />
-            <label htmlFor="file-input">Choose File</label>
+            <label htmlFor="file-input">Choose File</label> 
           </span>
           {previewSource && (
             <div>
@@ -103,9 +129,7 @@ const GenerateMail = () => {
             className="textarea-input"
             placeholder="Paste or enter text here"
             ref={textareaRef}
-            // value={pdfText}
-            value={''} // Render the resume text from the temporary variable
-            readOnly
+            onChange={handleTextareaChange}
           ></textarea>
         </div>
       </div>
@@ -113,7 +137,10 @@ const GenerateMail = () => {
         Generate Mail
       </button>
 
-      <GenerateMailCards />
+      {/* Display the generated mail in the textarea */}
+      {/* <textarea className="generated-mail" value={mail} readOnly></textarea> */}
+
+      <GenerateMailCards/>
     </>
   );
 };
