@@ -7,14 +7,14 @@ const Navbar = () => {
     window.location.href = "/signup";
   };
 
-  const fn2 = () => {
-    window.location.href ="/login";
+  const fn2 = () => { 
+    window.location.href ="/login"; 
   };
   return (
     <nav className="navbar">
       <div className="navbar-brand"> <img src="coldconnect logo.jpeg" alt="" />  </div>
       <ul className="navbar-links">
-        <li>How It Works</li>
+        {/* <li>How It Works</li> */}
         <li>Our Team</li>
       </ul>
       <div className="navbar-buttons">

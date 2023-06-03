@@ -5,17 +5,22 @@ body{
 .maincontainer{
     position: absolute;
     left: 6rem;
-    top: -4rem;
+    top: -1rem;
 }
 
 .input-1{
     position: absolute;
-width: 780px;
+width: 780px; 
 height: 625px;
 left: 5px;
 top: 177px;
 background: #5463E1;  
 border-radius: 10px 0 0 10px; 
+}
+
+.backbtn{
+  position: absolute;
+  left: -49rem;
 }
 
 
@@ -93,7 +98,7 @@ padding: 15px 123px;
 position: absolute;
 width: 347px;
 height: 89px;
-left: 1240px;
+left: 18rem;
 top: 797px;
 background: #FFFFFF;
 box-shadow: 0px 4px 4px #FFB8B8;
@@ -102,31 +107,7 @@ cursor: pointer;
 }
 
 .generate:hover{
-    width: 247px;
-    height: 52px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    text-align: center;
-    color: #1E2B9F;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 123px;
-    position: absolute;
-    width: 347px;
-    height: 89px;
-    left: 1240px;
-    top: 797px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px #FFB8B8;
-    border-radius: 30px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+    color: #dfe1ef;
     }
 
     .generate:hover,
@@ -157,8 +138,10 @@ cursor: pointer;
     position: absolute;
     width: 347px;
     height: 89px;
-    left: 80px;
-    top: 696px;
+    left: -8rem;
+    /* left: 80px; */
+    /* top: 696px; */
+    top: 40rem;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px #FFB8B8;
     border-radius: 30px;
@@ -166,42 +149,9 @@ cursor: pointer;
 }
 
 .clear:hover{
-    width: 247px;
-    height: 52px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    text-align: center;
-    color: #1E2B9F;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 123px;
-    position: absolute;
-    width: 347px;
-    height: 89px;
-    left: 80px;
-    top: 696px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px #FFB8B8;
-    border-radius: 30px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
 
-.clear:hover,
-.clear:focus {
-  outline: none;
+    color: #c6c8dc;
 }
-
-.clear:active {
-    transform: scale(0.95);
-    transition: transform 0.1s ease-in-out;
-  }
 
 /* .coldconnect{
     position: relative;

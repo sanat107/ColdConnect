@@ -18,7 +18,7 @@ const Stepone = ({formData, setFormData}) => {
 
   return (
     <div>
-      <h3>Step 1: Personal Information</h3>
+      <h3 className='step1' >Step 1: Personal Information</h3>
       <div className='input-field'>
         <div className='column'>
       <input type="text" className="input-box" name="name" value={formData.name} placeholder="Name" onChange={(event)=> setFormData({...formData, name: event.target.value})} />

@@ -37,7 +37,7 @@ const GenerateResume = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handleNextPage = () => {
+  const handleNextPage = () => { 
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
@@ -61,10 +61,10 @@ const GenerateResume = () => {
     if(currentPage === 5){
       return <GeneratePdf formData={formData} setFormData={setFormData} />
     }
-  }
+  } 
   return (
     <div>
-    <h2>Create Your Resume</h2>
+    <h2 className='mainheadingresume' >Create Your Resume</h2>
     <div>{PageDisplay()}</div>
 
     <button className='prev-btn' onClick={handlePreviousPage} disabled={currentPage === 1}>

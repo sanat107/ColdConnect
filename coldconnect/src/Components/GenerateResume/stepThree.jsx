@@ -23,10 +23,10 @@ const Stepthree = ({formData, setFormData}) => {
 
   return (
     <div>
-     <h2> Educational Details</h2>
+     <h2 className='step3' >Step 3: Educational Details</h2>
       <div className='column-three'>
       <div className='high-school'>
-        <p>High School</p>
+        <p >High School</p>
         <input className="input-box" type='text' placeholder='school name'/>
         <input className="input-box" type='text' placeholder='city' />
         <label>Start</label>

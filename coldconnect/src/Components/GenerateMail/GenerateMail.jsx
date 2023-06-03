@@ -5,16 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import { Document, Page, pdfjs } from 'react-pdf';
 import './GenerateMAil.css';
 import axios from 'axios';
-
 const GenerateMail = () => {
   const navigate = useNavigate();
   const [previewSource, setPreviewSource] = useState('');
-  const [apiData, setApiData] = useState('');
   const [pdfText, setPdfText] = useState('');
   const [mail, setMail] = useState('');
 
   const [manuallyEnteredData, setManuallyEnteredData] = useState('');
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef(null); 
   const textareaRef = useRef(null);
 
   const handleFileInputChange = async (event) => {
@@ -41,7 +39,6 @@ const GenerateMail = () => {
       const text = content.items.map((item) => item.str).join(' ');
       return text;
     } catch (error) {
-      console.error('Error extracting PDF text:', error);
       return '';
     }
   };
@@ -56,72 +53,42 @@ const GenerateMail = () => {
 
   const handleGenerateMail = async () => {
     const generatedMail = await generateMail();
-    setApiData(generatedMail);
+    setMail(generatedMail);
+    console.log(generateMail)
 
     if (textareaRef.current) {
       textareaRef.current.value = generatedMail;
     }
   };
 
-  // const generateMail = async () => {
-  //   const API_KEY = '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';
-  //   const profile = 'Software_Engineer';
-  //   const prompt = `Write a cold mail for a job post of ${profile}.\n\nPDF Text:\n${pdfText}\n\nManually Entered Data:\n${manuallyEnteredData}`;
-
-  //   try {
-  //     const payload = {
-  //       prompt: prompt,
-  //       temperature: 0,
-  //       model: 'text-davinci-003'
-  //     };
-
-  //     const response = await axios.post('https://api.openai.com/v1/completions', payload, {
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         Authorization: `Bearer ${API_KEY}`
-  //       }
-  //     });
-
-  //     console.log(response.data);
-  //     setMail(response.data);
-  //   } catch (error) {
-  //     console.error('Error generating mail:', error);
-  //   }
-  // };
-
   const generateMail = async () => {
-    const API_KEY = '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';
+    const API_KEY = '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';
     const profile = 'Software_Engineer';
     const prompt = `Write a cold mail for a job post of ${profile}.\n\nPDF Text:\n${pdfText}\n\nManually Entered Data:\n${manuallyEnteredData}`;
-  
+
     try {
       const payload = {
         prompt: prompt,
         temperature: 0,
         model: 'text-davinci-003'
       };
-  
+
       const response = await axios.post('https://api.openai.com/v1/completions', payload, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${API_KEY}`
         }
       });
-  
+
+
       const generatedMail = response.data.choices[0].text;
       console.log(generatedMail);
       return generatedMail;
     } catch (error) {
+      // console.error('Error generating mail:', error);
       return '';
     }
   };
-  
-
-
-
-
-
-
 
   const handleGoBack = () => {
     navigate('/resumeselect');
@@ -133,8 +100,8 @@ const GenerateMail = () => {
 
   return (
     <>
-      <Navbar />
-      <button onClick={handleGoBack}>Go Back</button>
+    <Navbar/>
+      <button onClick={handleGoBack} className='backbtn' >Go Back</button>
       <div className="maincontainer">
         <div className="input-1">
           <span>
@@ -169,7 +136,10 @@ const GenerateMail = () => {
         Generate Mail
       </button>
 
-      <GenerateMailCards apiData={apiData} />
+      {/* Display the generated mail in the textarea */}
+      {/* <textarea className="generated-mail" value={mail} readOnly></textarea> */}
+
+      <GenerateMailCards/>
     </>
   );
 };

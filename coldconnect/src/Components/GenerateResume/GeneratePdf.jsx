@@ -59,14 +59,14 @@ const GeneratePdf = ({ formData }) => {
         // Add the image data URL to the PDF document
         pdf.addImage(imgData, 'JPEG', 10, 10, 190, 0);
       
-        // Save the PDF file
+        // Save the PDF file 
         pdf.save('my-pdf-document.pdf');
       }; 
   
     
   return (
     <div>
-        <button onClick={generateAndDownloadPDF}>Download PDF</button>
+        <button onClick={generateAndDownloadPDF} className='downloadpdf' >Download PDF</button>
       <div id="pdf-content">
       <div className="resume-container">
         <div className="personal-info">
@@ -121,7 +121,7 @@ const GeneratePdf = ({ formData }) => {
       </div>
     </div>
 
-    <button onClick={handleGetJobs} > Get jobs</button>
+    <button onClick={handleGetJobs} className='getjobs'  > Get jobs</button>
     </div>
   );
 }

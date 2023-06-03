@@ -1,4 +1,5 @@
 import React from 'react'
+import "./resume.css"
 
 const Steptwo = ({formData, setFormData}) => {
   
@@ -23,7 +24,7 @@ const Steptwo = ({formData, setFormData}) => {
 
   return (
     <div>
-      <h3>Step 2: Work Experience</h3>
+      <h3 className='step2' >Step 2: Work Experience</h3>
       <div className='input-field'>
         <div className='column'>
           <input type='text' className="input-box" placeholder='Job title' onChange={(event)=> setFormData({...formData, jobTitle: event.target.value})} />
