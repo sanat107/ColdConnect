@@ -62,19 +62,16 @@ const GenerateMail = () => {
   };
 
   const generateMail = async () => {
-    const API_KEY = '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';
+    const API_KEY = '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';
     const profile = 'Software_Engineer';
     const prompt = `Write a cold mail for a job post of ${profile}.\n\nPDF Text:\n${pdfText}\n\nManually Entered Data:\n${manuallyEnteredData}`;
 
     try {
       const payload = {
         prompt: prompt,
-        model: 'text-davinci-003',
-        max_tokens: 512,
-        top_p: 1,
-        temperature: 0.5,
-        frequency_penalty: 0,
-        presence_penalty: 0
+        temperature: 0,
+        max_tokens:512,
+        model: 'text-davinci-003'
       };
 
       const response = await axios.post('https://api.openai.com/v1/completions', payload, {
@@ -116,7 +113,7 @@ const GenerateMail = () => {
               ref={fileInputRef}
               id="file-input"
             />
-            <label htmlFor="file-input">Choose File</label>
+            <label htmlFor="file-input">Choose File</label> 
           </span>
           {previewSource && (
             <div>

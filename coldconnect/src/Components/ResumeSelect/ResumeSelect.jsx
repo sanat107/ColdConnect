@@ -39,7 +39,7 @@ const ResumeSelect = () => {
         <li onClick={handleSecondClick}> 
           <div className="second">
             <div>
-              <span className='pdf-2'>
+              <span className='pdf-2'> 
                 <FaRegFilePdf/>
 
               </span> 

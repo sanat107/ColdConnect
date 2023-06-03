@@ -19,8 +19,18 @@ border-radius: 10px 0 0 10px;
 }
 
 .backbtn{
+  cursor: pointer;
+  width: 9rem;
+height: 3rem;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+text-align: center;
+color: #1E2B9F;
   position: absolute;
-  left: -49rem;
+  top: 7rem;
+  left: 3rem;
 }
 
 
@@ -98,7 +108,7 @@ padding: 15px 123px;
 position: absolute;
 width: 347px;
 height: 89px;
-left: 18rem;
+left: 68rem;
 top: 797px;
 background: #FFFFFF;
 box-shadow: 0px 4px 4px #FFB8B8;
@@ -138,7 +148,7 @@ cursor: pointer;
     position: absolute;
     width: 347px;
     height: 89px;
-    left: -8rem;
+    left: 10rem;
     /* left: 80px; */
     /* top: 696px; */
     top: 40rem;
