@@ -12,7 +12,7 @@ const ResumeSelect = () => {
   };
 
   const handleSecondClick = () => {
-    navigate('/generatResume'); // Redirect to the generateResume route
+    navigate('/generateresume'); // Redirect to the generateResume route
   };
 
   const handlePrevClick = () => {
