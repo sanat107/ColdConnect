@@ -4,6 +4,7 @@ import StepTwo from './stepTwo';
 import StepThree from './stepThree';
 import Stepfour from './Stepfour';
 import GeneratePdf from './GeneratePdf';
+import './resume.css';
 
 const GenerateResume = () => {
 
@@ -18,6 +19,19 @@ const GenerateResume = () => {
     jobplace: "",
     startDate: "",
     endDate: "",
+    school: "",
+    schoolArea: "",
+    schoolStart: "",
+    schoolEnd: "",
+    undergradclg: "",
+    undergradArea: "",
+    undergradStart: "",
+    undergradEnd: "",
+    postgradclg: "",
+    postgradArea: "",
+    postgradStart: "",
+    postgradEnd: "",
+
     skills: []
   })
 
@@ -53,10 +67,10 @@ const GenerateResume = () => {
     <h2>Create Your Resume</h2>
     <div>{PageDisplay()}</div>
 
-    <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+    <button className='prev-btn' onClick={handlePreviousPage} disabled={currentPage === 1}>
       Previous
     </button>
-    <button onClick={handleNextPage} disabled={currentPage === 5}>
+    <button className='next-btn' onClick={handleNextPage} disabled={currentPage === 5}>
       Next
     </button>
   </div>
