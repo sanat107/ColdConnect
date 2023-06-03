@@ -6,19 +6,17 @@ const Stepthree = ({formData, setFormData}) => {
   const preview =()=>{
     return(
       <div className='preview'>
-          <div>Name: {formData.name} </div>
-          <div>email: {formData.email} </div>
-          <div>phone:  {formData.phone} </div>
-          <div>country: {formData.country} </div>
-          <div>profession: {formData.profession} </div>
+        <h2 className='preview-head'>Preview</h2>
+          <li>Name: {formData.name} </li>
+          <li>email: {formData.email} </li>
+          <li>phone:  {formData.phone} </li>
+          <li>country: {formData.country} </li>
+          <li>profession: {formData.profession} </li>
           <div>Work History
-            <div>Job Title: {formData.jobTitle} </div>
-            <div>employer: {formData.employer} </div>
-            <div>Start date: {formData.start} </div>
-            <div>end date : {formData.end} </div>
-          </div>
-          <div>
-            EDUCATION
+            <li>Job Title: {formData.jobTitle} </li>
+            <li>employer: {formData.employer} </li>
+            <li>Start date: {formData.start} </li>
+            <li>end date : {formData.end} </li>
           </div>
       </div>
     )}
@@ -29,30 +27,30 @@ const Stepthree = ({formData, setFormData}) => {
       <div className='column-three'>
       <div className='high-school'>
         <p>High School</p>
-        <input type='text' placeholder='school name'/>
-        <input type='text' placeholder='city' />
+        <input className="input-box" type='text' placeholder='school name'/>
+        <input className="input-box" type='text' placeholder='city' />
         <label>Start</label>
-        <input type='date' placeholder='' />
+        <input className="input-box" type='date' placeholder='' />
         <label>passed out on</label>
-        <input type="date" placeholder='' />
+        <input className="input-box" type="date" placeholder='' />
       </div>
       <div className='undergrad'>
         <p>Undergrad</p>
-        <input type='text' placeholder='college/university name'/>
-        <input type='text' placeholder='city' />
+        <input className="input-box" type='text' placeholder='college/university name'/>
+        <input className="input-box" type='text' placeholder='city' />
         <label>Start</label>
-        <input type='date' placeholder='' />
+        <input className="input-box" type='date' placeholder='' />
         <label>graduated out on</label>
-        <input type="date" placeholder='' />
+        <input className="input-box" type="date" placeholder='' />
       </div>
       <div className='postgrad'>
         <p>Post Graduate</p>
-        <input type='text' placeholder='college/unicersity name'/>
-        <input type='text' placeholder='city' />
+        <input className="input-box" type='text' placeholder='college/unicersity name'/>
+        <input className="input-box" type='text' placeholder='city' />
         <label>Start</label>
-        <input type='date' placeholder='' />
+        <input className="input-box" type='date' placeholder='' />
         <label>graduated out on</label>
-        <input type="date" placeholder='' />
+        <input className="input-box" type="date" placeholder='' />
       </div>
       </div>
       <div className='column-three '>

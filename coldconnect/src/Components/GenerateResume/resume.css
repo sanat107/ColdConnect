@@ -1,5 +1,5 @@
 .progress-bar {
-    margin-top: 25%;
+  
     height: 10px;
     background-color: lightgray;
     border-radius: 5px;
@@ -13,20 +13,16 @@
     border-radius: 5px;
   }
 
-  .input-field{
-    margin-left: 5%;
-    
-  }
-  .input-field input{
-    margin: 1%;
-    padding: 1%;
-  }
-
+ 
   .column{
     display: flex;
     flex-direction: column;
     float: left;
-    width: 50%;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
   
   .preview{
@@ -37,12 +33,12 @@
     padding: 5%;
     color: white;
   }
+  .preview li{
+    margin: 2%;
+  }
 
   .column-three{
-    display: flex;
-    flex-direction: column;
-    float: left;
-    width: 50%;
+    margin-top: 5%;  
 
   }
   .resume-container {
@@ -53,8 +49,9 @@
   }
   
   .resume-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-top: 0;
+    font-weight: bold;
   }
   
   .resume-container p,
@@ -66,3 +63,149 @@
   .resume-container ul {
     margin-left: 20px;
   }
+
+  #pdf-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .input-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+
+  .high-school{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 3%
+  }
+
+  .undergrad{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 2%;
+
+  }
+
+  .postgrad{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .skills-input {
+    margin-left: 10%;
+  }
+  
+  h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-right: 30%;
+    }
+
+  .add-skill {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .skills-list {
+    margin-left: 10%;
+    margin-top: 2%;
+  }
+  
+  .skill {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5%;
+    margin-bottom: 5px;
+  }
+
+  .skill-text {
+    margin-right: 5px;
+  }
+  
+  .remove-skill {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .prev-btn {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  .next-btn
+    {
+      margin-top: 5%;
+      margin-left:50%;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+.prev-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.next-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #0056b3;
+}
+
+.prev-btn:disabled,
+.next-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.input-boxy {
+  width: 15%;
+  padding: 12px;
+  margin-right: 5%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.preview-head{
+  background-color: white;
+  color: darkblue;
+}
