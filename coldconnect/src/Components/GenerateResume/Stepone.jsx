@@ -6,6 +6,7 @@ const Stepone = ({formData, setFormData}) => {
   const preview =()=>{
       return(
         <div className='preview'>
+                  <h2 className='preview-head'>Preview</h2>
             <li className="">Name: {formData.name} </li>
             <li>email: {formData.email} </li>
             <li>phone:  {formData.phone} </li>
