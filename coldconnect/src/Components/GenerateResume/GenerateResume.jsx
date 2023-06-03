@@ -5,7 +5,6 @@ import Stepthree from './stepThree';
 import Stepfour from './StepFour';
 import GeneratePdf from './GeneratePdf';
 
-
 const GenerateResume = () => {
 
   const [formData, setFormData] = useState({
@@ -49,19 +48,7 @@ const GenerateResume = () => {
       return <GeneratePdf formData={formData} setFormData={setFormData} />
     }
   }
-  return (
-    <div>
-    <h2>Create Your Resume</h2>
-    <div>{PageDisplay()}</div>
 
-    <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-      Previous
-    </button>
-    <button onClick={handleNextPage} disabled={currentPage === 5}>
-      Next
-    </button>
-  </div>
-  )
 }
 
 export default GenerateResume;
