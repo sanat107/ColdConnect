@@ -69,8 +69,12 @@ const GenerateMail = () => {
     try {
       const payload = {
         prompt: prompt,
-        temperature: 0,
-        model: 'text-davinci-003'
+        model: 'text-davinci-003',
+        max_tokens: 512,
+        top_p: 1,
+        temperature: 0.5,
+        frequency_penalty: 0,
+        presence_penalty: 0
       };
 
       const response = await axios.post('https://api.openai.com/v1/completions', payload, {
