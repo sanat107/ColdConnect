@@ -1,9 +1,55 @@
 import React from 'react'
+import { useState } from 'react';
 import "./resume.css"
 
+
 const Steptwo = ({formData, setFormData}) => {
+
+  const [subdone, setSubdone] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    // Perform validation
+    const { jobTitle, employer, jobplace, start, end } = formData;
+  
+  
+    if (!jobTitle.trim()) {
+      alert('Job title field cannot be empty');
+      return;
+    }
+  
+    if (!employer.trim()) {
+      alert('Employer field cannot be empty');
+      return;
+    }
+  
+    if (!jobplace.trim()) {
+      alert('City, country field cannot be empty');
+      return;
+    }
+  
+    // if (!start.trim()) {
+    //   alert('Start date field cannot be empty');
+    //   return;
+    // }
+  
+    // if (!end.trim()) {
+    //   alert('End date field cannot be empty');
+    //   return;
+    // }
+  
+    // Submit the form or perform further actions
+    // ...
+    setSubdone("done")
+  };
+  
+  
+  
+  // Rest of the code remains the same
   
   const preview =()=>{
+    
+    
     return(
       <div className='preview'>
                 <h2 className='preview-head'>Preview</h2>
@@ -34,6 +80,7 @@ const Steptwo = ({formData, setFormData}) => {
           <input className="input-box" type='date' placeholder='DD-MM-YYYY' onChange={(event)=> setFormData({...formData, start: event.target.value})}/>
           <label>End date</label>
           <input className="input-box" type='date' placeholder='DD-MM-YYYY' onChange={(event)=> setFormData({...formData, end: event.target.value})}/>
+          <button className='submit-btn' onClick={handleSubmit}> {subdone === 'done' ? 'Done!' : 'Submit'}</button>
 
       </div>
       <div className='column'>
