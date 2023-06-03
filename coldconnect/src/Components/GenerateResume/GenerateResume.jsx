@@ -31,7 +31,6 @@ const GenerateResume = () => {
     postgradArea: "",
     postgradStart: "",
     postgradEnd: "",
-
     skills: []
   })
 
